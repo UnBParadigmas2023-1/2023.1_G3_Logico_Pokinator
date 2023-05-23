@@ -2,7 +2,7 @@ build: clean
 	docker build -t pokinator-img:latest --force-rm .
 
 run: clean-container
-	docker run -v $(PWD)/app:/app --name pokinator pokinator-img:latest swipl --quiet main.pl 
+	docker run -v $(shell pwd)/app:/app --name pokinator pokinator-img:latest swipl --quiet /app/main.pl
 
 clean: clean-container
 	-docker image rm pokinator-img:latest
