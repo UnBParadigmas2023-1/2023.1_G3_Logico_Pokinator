@@ -15,5 +15,5 @@ start:- consult('base.pl'),
     read(G),
     
 
-    findall(X, questoes(X,A,B,C,D,E,F,G), Lista), write(Lista).
+    findall(X, pokemon(X,A,B,C,D,E,F,G), Lista), write(Lista).
 
