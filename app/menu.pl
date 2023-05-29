@@ -2,7 +2,8 @@
 :- module(menu, [
     print_welcome/0,
     print_main_menu/0,
-    print_instructions/0
+    print_instructions/0,
+    print_invalid_command/0
 ]).
 
 print_welcome :-
@@ -84,3 +85,14 @@ print_instructions :-
     write("1. É recomendado que você consulte um pokedex com informações oficiais antes de iniciar o jogo"), nl,
     write("2. As suas respostas são muito importantes! Caso você responda algo errado a adivinhação não funcionará! (Por isso recomendamos consultar o Pokedex antes de jogar xD)"), nl,
     nl.
+
+print_invalid_command:-
+    nl,
+    write('_______________________________ ________   '), nl,
+    write('\\_   _____/\\______   \\______   \\\\_____  \\  '), nl,
+    write(' |    __)_  |       _/|       _/ /   |   \\ '), nl,
+    write(' |        \\ |    |   \\|    |   \\/    |    \\'), nl,
+    write('/_______  / |____|_  /|____|_  /\\_______  /'), nl,
+    write('        \\/         \\/        \\/         \\/ '), nl,
+    write("Atenção: A opção digitada não foi reconhecida como um comando válido!"), nl,
+    write("Por favor, digite novamente."), nl.
