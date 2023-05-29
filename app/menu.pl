@@ -1,7 +1,8 @@
 
 :- module(menu, [
     print_welcome/0,
-    print_main_menu/0
+    print_main_menu/0,
+    print_instructions/0
 ]).
 
 print_welcome :-
@@ -55,4 +56,31 @@ print_main_menu :-
     write("( 1 ) Começar Adivinhação"), nl,
     write("( 2 ) Instruções Para Jogar"), nl,
     write("( 3 ) Sair do Jogo"), nl,
+    nl.
+
+print_instructions :-
+    nl,
+    write('⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⠾⠛⠋⠉⠉⠉⠉⢙⣿⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠀⢀⣼⠟⠁  ⠀⠀⠀⠀⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⢠⣿⠁PIKACHU?⠙⢿⣿⣿⣿⡟⣷⡀⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⣾⢇⣤⣶⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠙⠛⠛⠁⢹⣇⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤SQUIRTLE?⢸⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀   ⢸⡏⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠘⣿⣿EEVEE?⣿⣿⡇⠀⠀⠀⠀⢠⡿⠁⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⢀⣴⠟⠁⠀⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠀⣠⣤⡙⠻⢿⣿⣿⣿⣿⣿⣋⣠⣤⡶⠟⢁⣤⡄⠀⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠀⢿⣿⣿⣷⣤⣈⣉⠉⠛⠛⠉⣉⣠⣤⣾⣿⣿⡟⠀⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⣾⣦⣀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⢋⣠⣴⣷⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⢿⣿⣿⣿⣷⣶⣤⣬⣭⣉⣉⣉⣩⣭⣥⣤⣶⣾⣿⣿⣿⡿⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀'), nl,
+    write("Primeiramente seja bem vindo ao POKINATOR! Aqui estão as instruções e sugestões para jogar!"), nl, nl,
+    write("Instruções:"), nl,
+    write("1. Você deve pensar em um Pokemon que faça parte da primeira geração pokemon."), nl,
+    write("2. Após iniciar o jogo, responda as perguntas de acordo com o pokemon que você pensou."), nl,
+    write("3. Após responder algumas perguntas o jogo irá dizer qual pokemon você pensou!"), nl, nl,
+    write("Sugestões:"), nl,
+    write("1. É recomendado que você consulte um pokedex com informações oficiais antes de iniciar o jogo"), nl,
+    write("2. As suas respostas são muito importantes! Caso você responda algo errado a adivinhação não funcionará! (Por isso recomendamos consultar o Pokedex antes de jogar xD)"), nl,
     nl.
