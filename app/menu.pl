@@ -1,7 +1,8 @@
 
 :- module(menu, [
-    print_welcome/0
-    ]).
+    print_welcome/0,
+    print_main_menu/0
+]).
 
 print_welcome :-
     write('      __________       __   .__               __                '), nl,
@@ -47,3 +48,11 @@ print_welcome :-
     write('                                                         |,.. |'), nl,
     write('                                                          \`. \`;'), nl,
     write('                                                            \`\''), nl.
+
+print_main_menu :-
+    write("Digite uma das opções:"), nl,
+    nl,
+    write("( 1 ) Começar Adivinhação"), nl,
+    write("( 2 ) Instruções Para Jogar"), nl,
+    write("( 3 ) Sair do Jogo"), nl,
+    nl.
