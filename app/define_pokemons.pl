@@ -11,7 +11,7 @@ limpa_pokemons1(X).
 
 % --------- BASE DE CONHECIMENTO ---------
 
-%% Pokemons ( nome, tipo1, tipo2, formato, cor)
+%% Pokemons ( nome, evolucao, tipo1, tipo2, formato, cor)
 pokemon('Bulbasaur', evo2 grama, veneno, quadrupede, verde).
 pokemon('Ivysaur', evo1, grama, veneno, quadrupede, verde).
 pokemon('Venusaur', evo0, grama, veneno, quadrupede, verde).
