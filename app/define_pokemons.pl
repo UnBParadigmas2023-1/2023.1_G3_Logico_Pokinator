@@ -1,12 +1,12 @@
-:- module(define_pokemons, [pokemon/8, limpa_pokemons/1]).
-:- dynamic pokemon/8.
+:- module(define_pokemons, [pokemon/9, limpa_pokemons/1]).
+:- dynamic pokemon/9.
 
 :-style_check(-discontiguous).
 :-style_check(-singleton).
 
 limpa_pokemons(X) :- limpa_pokemons1(X), fail.
 limpa_pokemons(X).
-limpa_pokemons1(X) :- retract(pokemon(_, _, _, _, _, _, _, _)).
+limpa_pokemons1(X) :- retract(pokemon(_, _, _, _, _, _, _, _, _)).
 limpa_pokemons1(X).
 
 % --------- BASE DE CONHECIMENTO ---------
