@@ -3,7 +3,8 @@
     print_welcome/0,
     print_main_menu/0,
     print_instructions/0,
-    print_invalid_command/0
+    print_invalid_command/0,
+    print_pokemon_guessed/0
 ]).
 
 print_welcome :-
@@ -86,7 +87,7 @@ print_instructions :-
     write("2. As suas respostas são muito importantes! Caso você responda algo errado a adivinhação não funcionará! (Por isso recomendamos consultar o Pokedex antes de jogar xD)"), nl,
     nl.
 
-print_invalid_command:-
+print_invalid_command :-
     nl,
     write('_______________________________ ________   '), nl,
     write('\\_   _____/\\______   \\______   \\\\_____  \\  '), nl,
@@ -96,3 +97,22 @@ print_invalid_command:-
     write('        \\/         \\/        \\/         \\/ '), nl,
     write("Atenção: A opção digitada não foi reconhecida como um comando válido!"), nl,
     write("Por favor, digite novamente."), nl.
+
+print_pokemon_guessed(nome_pokemon) :-
+    nl,
+    write('⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⠾⠛⠋⠉⠉⠉⠉⢙⣿⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠀⢀⣼⠟⠁  ⠀⠀⠀⠀⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⢠⣿⠁????????⠙⢿⣿⣿⣿⡟⣷⡀⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⣾⢇⣤⣶⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠙⠛⠛⠁⢹⣇⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤?????????⢸⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀   ⢸⡏⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠘⣿⣿??????⣿⣿⡇⠀⠀⠀⠀⢠⡿⠁⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⢀⣴⠟⠁⠀⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠀⣠⣤⡙⠻⢿⣿⣿⣿⣿⣿⣋⣠⣤⡶⠟⢁⣤⡄⠀⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠀⢿⣿⣿⣷⣤⣈⣉⠉⠛⠛⠉⣉⣠⣤⣾⣿⣿⡟⠀⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⣾⣦⣀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⢋⣠⣴⣷⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⢿⣿⣿⣿⣷⣶⣤⣬⣭⣉⣉⣉⣩⣭⣥⣤⣶⣾⣿⣿⣿⡿⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠀⠀⠀⠀⠀'), nl,
+    write('⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀'), nl,
+    write("O nome do seu pokemon é: "), write(nome_pokemon), nl.
