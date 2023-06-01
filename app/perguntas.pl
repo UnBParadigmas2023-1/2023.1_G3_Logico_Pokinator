@@ -2,10 +2,15 @@
 :- module(perguntas, [ask/1, limpa_perguntas/1, get_better_question/1]).
 =======
 :- module(perguntas, [ask/1, limpa_perguntas/1, get_better_question/1, handle_input/1]).
+<<<<<<< HEAD
 
 >>>>>>> 772b913 (Trantando inputs)
 :- use_module([define_pokemons]).
 :- use_module([bc_atualizacoes]).
+=======
+:- use_module([define_pokemons]).
+:- use_module([bc_atualizacoes]).
+%:- module(perguntas, [ask/1, limpa_perguntas/1, get_better_question/1]).
 
 
 :-style_check(-discontiguous).
@@ -63,6 +68,9 @@ compare_amounts([N1, P1, Len1], [N2, P2, Len2], [Nr, Pr, Lenr]) :-
 
 ask([N, Paramm, _]) :-
     write_question(N, Paramm), nl, nl,
+    write(" [s. ou n.] "),
+    read(Ans),
+    atualizar_pokemons(Ans,N,Paramm).
     write(' [s. ou n.] '),
     handle_input(N, Paramm).
 
@@ -90,6 +98,7 @@ process_input(_, N, Paramm) :-
     print_invalid_command,
     sleep(3),
     ask([N, Paramm, _]).
+
 
 
 

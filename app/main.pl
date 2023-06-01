@@ -44,7 +44,7 @@ start :-
     flow.
     
 flow :-
-   shell('clear'),
+%    shell('clear'),
    print_header,
    get_better_question(Question),
    read_line_to_codes(user_input, _),
