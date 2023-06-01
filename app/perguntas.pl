@@ -1,5 +1,4 @@
-:- module(perguntas, [lidar_pergunta/1, limpa_perguntas/1, get_better_question_v2/1]).
-%:- use_module([bc_atualizacoes]).
+:- module(perguntas, [ask/1, limpa_perguntas/1, get_better_question/1]).
 
 :- use_module([define_pokemons]).
 
@@ -11,9 +10,9 @@ limpa_perguntas(X).
 limpa_perguntas1(X) :- retract(pergunta(_, _)).
 limpa_perguntas1(X).
 
-%Calculo de pergunta %
+% Calculo de pergunta %
 
-get_better_question_v2(Question) :-
+get_better_question(Question) :-
     get_paramms_set(A, A, _, _, _, _, ParammsSet1),
     max_relative_amount(ParammsSet1, 1, AmountList1),
     get_paramms_set(B, _, B, _, _, _, ParammsSet2),
@@ -61,260 +60,91 @@ compare_amounts([N1, P1, Len1], [N2, P2, Len2], [Nr, Pr, Lenr]) :-
     ;
         Lenr = Len2, Pr = P2, Nr = N2
     ).
-    
+
+% Tratamento de Perguntas
+
+ask([N, Paramm, _]) :-
+    write_question(N, Paramm), nl, nl,
+    write(" [s. ou n.] "),
+    read(Ans).
+    % TODO!
+    % tratar a resposta -> remover o case da resposta
+    %                   -> chamar a tela de erro para entradas invalidas e voltar pra pergunta
+    % atualizar a base  -> devem ser removidos todos os pokemons englobados na negativa da resposta
+    %                   -> atualização deve ser implementada em outro arquivo
+    % melhorar as perguntas sobre o formato do pokemon
+
 % ---- Evolução ---- %
-%% Pokemons ( nome, evolucao, tipo1, tipo2, formato, cor)
-lidar_pergunta(evo2) :-
-    write("Seu Pokémon tem 2 evoluções? "),
-    read(Ans),
-    atualizar_evolucao(Ans, evo2).
+write_question(1, evo3) :-
+    write(" Seu Pokémon tem 3 evoluções? ").
 
-lidar_pergunta(evo1) :-
-    write("Seu Pokémon tem 1 evolução? "),
-    read(Ans),
-    atualizar_evolucao(Ans, evo1).
+write_question(1, evo2) :-
+    write(" Seu Pokémon tem 2 evoluções? ").
 
-lidar_pergunta(evo0) :-
-    write("Seu Pokémon tem nenhuma evolução? "),
-    read(Ans),
-    atualizar_evolucao(Ans, evo0).
+write_question(1, evo1) :-
+    write(" Seu Pokémon tem 1 evolução apenas? ").
+
+write_question(1, evo0) :-
+    write(" Seu Pokémon tem alguma evolução? ").
 
 % ---- Tipo 1 ---- %
-lidar_pergunta(grama) :-
-    write("O primeiro tipo do seu Pokémon é Grama? "),
-    read(Ans),
-    atualizar_tipo1(Ans, grama).
-
-lidar_pergunta(fogo) :-
-    write("O primeiro tipo do seu Pokémon é Fogo? "),
-    read(Ans),
-    atualizar_tipo1(Ans, fogo).
-
-lidar_pergunta(agua) :-
-    write("O primeiro tipo do seu Pokémon é Água? "),
-    read(Ans),
-    atualizar_tipo1(Ans, agua).
-
-lidar_pergunta(inseto) :-
-    write("O primeiro tipo do seu Pokémon é Inseto? "),
-    read(Ans),
-    atualizar_tipo1(Ans, inseto).
-
-lidar_pergunta(normal) :-
-    write("O primeiro tipo do seu Pokémon é Normal? "),
-    read(Ans),
-    atualizar_tipo1(Ans, normal).
-
-lidar_pergunta(veneno) :-
-    write("O primeiro tipo do seu Pokémon é Veneno? "),
-    read(Ans),
-    atualizar_tipo1(Ans, veneno).
-
-lidar_pergunta(eletrico) :-
-    write("O primeiro tipo do seu Pokémon é Elétrico? "),
-    read(Ans),
-    atualizar_tipo1(Ans, eletrico).
-
-lidar_pergunta(solo) :-
-    write("O primeiro tipo do seu Pokémon é Solo? "),
-    read(Ans),
-    atualizar_tipo1(Ans, solo).
-
-lidar_pergunta(fada) :-
-    write("O primeiro tipo do seu Pokémon é Fada? "),
-    read(Ans),
-    atualizar_tipo1(Ans, fada).
-
-lidar_pergunta(lutador) :-
-    write("O primeiro tipo do seu Pokémon é Lutador? "),
-    read(Ans),
-    atualizar_tipo1(Ans, lutador).
-
-lidar_pergunta(psiquico) :-
-    write("O primeiro tipo do seu Pokémon é Psíquico? "),
-    read(Ans),
-    atualizar_tipo1(Ans, psiquico).
-
-lidar_pergunta(pedra) :-
-    write("O primeiro tipo do seu Pokémon é Pedra? "),
-    read(Ans),
-    atualizar_tipo1(Ans, pedra).
-
-lidar_pergunta(fantasma) :-
-    write("O primeiro tipo do seu Pokémon é Fantasma? "),
-    read(Ans),
-    atualizar_tipo1(Ans, fantasma).
-
-lidar_pergunta(gelo) :-
-    write("O primeiro tipo do seu Pokémon é Gelo? "),
-    read(Ans),
-    atualizar_tipo1(Ans, gelo).
-
-
-lidar_pergunta(dragao) :-
-    write("O primeiro tipo do seu Pokémon é Dragão? "),
-    read(Ans),
-    atualizar_tipo1(Ans, dragao).
+write_question(2, Type) :-
+    write(" O primeiro tipo do seu Pokémon é "),
+    write(Type),
+    write("?").
 
 % ---- Tipo 2 ---- %
-lidar_pergunta(n) :-
-    write("O seu Pokémon possui segundo tipo? "),
-    read(Ans),
-    atualizar_tipo2(Ans, n).
+write_question(3, n) :-
+    write(" O seu Pokémon possui um segundo tipo? ").
 
-lidar_pergunta(veneno) :-
-    write("O segundo tipo do seu Pokémon é Veneno? "),
-    read(Ans),
-    atualizar_tipo2(Ans, veneno).
-
-lidar_pergunta(voador) :-
-    write("O segundo tipo do seu Pokémon é Voador? "),
-    read(Ans),
-    atualizar_tipo2(Ans, voador).
-
-lidar_pergunta(solo) :-
-    write("O segundo tipo do seu Pokémon é Solo? "),
-    read(Ans),
-    atualizar_tipo2(Ans, solo).
-
-lidar_pergunta(fada) :-
-    write("O segundo tipo do seu Pokémon é Fada? "),
-    read(Ans),
-    atualizar_tipo2(Ans, fada).
-
-lidar_pergunta(grama) :-
-    write("O segundo tipo do seu Pokémon é Grama? "),
-    read(Ans),
-    atualizar_tipo2(Ans, grama).
-
-lidar_pergunta(lutador) :-
-    write("O segundo tipo do seu Pokémon é Lutador? "),
-    read(Ans),
-    atualizar_tipo2(Ans, lutador).
-
-lidar_pergunta(aco) :-
-    write("O segundo tipo do seu Pokémon é Aço? "),
-    read(Ans),
-    atualizar_tipo2(Ans, aco).
-
-lidar_pergunta(gelo) :-
-    write("O segundo tipo do seu Pokémon é Gelo? "),
-    read(Ans),
-    atualizar_tipo2(Ans, gelo).
-
-lidar_pergunta(psiquico) :-
-    write("O segundo tipo do seu Pokémon é Psíquico? "),
-    read(Ans),
-    atualizar_tipo2(Ans, psiquico).
-
-lidar_pergunta(pedra) :-
-    write("O segundo tipo do seu Pokémon é Pedra? "),
-    read(Ans),
-    atualizar_tipo2(Ans, pedra).
+write_question(3, Type) :-
+    write(" O segundo tipo do seu Pokémon é "),
+    write(Type),
+    write("?").
 
 % ---- Formato ---- %
-lidar_pergunta(quadrupede) :-
-    write("O formato do seu Pokémon é Quadrúpede? "),
-    read(Ans),
-    atualizar_formato(Ans, quadrupede).
+write_question(4, quadrupede) :-
+    write(" O formato do seu Pokémon é Quadrúpede? ").
 
-lidar_pergunta(bipede-com-cauda) :-
-    write("O formato do seu Pokémon é um Bípede com cauda? "),
-    read(Ans),
-    atualizar_formato(Ans, bipede-com-cauda).
+write_question(4, bipede-com-cauda) :-
+    write(" O formato do seu Pokémon é um Bípede com cauda? ").
 
-lidar_pergunta(insectoide) :-
-    write("O formato do seu Pokémon é um Insectoide (lembra um artrópode)? "),
-    read(Ans),
-    atualizar_formato(Ans, insectoide).
+write_question(4, insectoide) :-
+    write(" O formato do seu Pokémon é um Insectoide (lembra um artrópode)? ").
 
-lidar_pergunta(serpentino) :-
-    write("O formato do seu Pokémon é um Serpentino (formato cilíndrico)? "),
-    read(Ans),
-    atualizar_formato(Ans, serpentino).
+write_question(4, serpentino) :-
+    write(" O formato do seu Pokémon é um Serpentino (formato cilíndrico)? ").
 
-lidar_pergunta(quatro-asas) :-
-    write("O formato do seu Pokémon possui dois ou mais pares de asas? "),
-    read(Ans),
-    atualizar_formato(Ans, quatro-asas).
+write_question(4, quatro-asas) :-
+    write(" O formato do seu Pokémon possui dois ou mais pares de asas? ").
 
-lidar_pergunta(duas-asas) :-
-    write("O formato do seu Pokémon possui somente um par de asas? "),
-    read(Ans),
-    atualizar_formato(Ans, duas-asas).
+write_question(4, duas-asas) :-
+    write(" O formato do seu Pokémon possui somente um par de asas? ").
 
-lidar_pergunta(cabeca-e-pernas) :-
-    write("O formato do seu Pokémon possui somente uma ou mais cabeças acomapanhadas de um par de pernas? "),
-    read(Ans),
-    atualizar_formato(Ans, cabeca-e-pernas).
+write_question(4, cabeca-e-pernas) :-
+    write(" O formato do seu Pokémon possui somente uma ou mais cabeças acomapanhadas de um par de pernas? ").
 
-lidar_pergunta(bipede-sem-cauda) :-
-    write("O formato do seu Pokémon é um Bípede sem cauda? "),
-    read(Ans),
-    atualizar_formato(Ans, bipede-sem-cauda).
+write_question(4, bipede-sem-cauda) :-
+    write(" O formato do seu Pokémon é um Bípede sem cauda? ").
 
-lidar_pergunta(multiplos-corpos) :-
-    write("O formato do seu Pokémon possui somente várias cabeças? "),
-    read(Ans),
-    atualizar_formato(Ans, multiplos-corpos).
+write_question(4, multiplos-corpos) :-
+    write(" O formato do seu Pokémon possui somente várias cabeças? ").
 
-lidar_pergunta(barbatanas) :-
-    write("O formato do seu Pokémon possui Barbatanas? "),
-    read(Ans),
-    atualizar_formato(Ans, barbatanas).
+write_question(4, barbatanas) :-
+    write(" O formato do seu Pokémon possui Barbatanas? ").
 
-lidar_pergunta(tentaculos) :-
-    write("O formato do seu Pokémon possui vários tentáculos? "),
-    read(Ans),
-    atualizar_formato(Ans, tentaculos).
+write_question(4, tentaculos) :-
+    write(" O formato do seu Pokémon possui vários tentáculos? ").
 
-lidar_pergunta(cabeca-e-bracos) :-
-    write("O formato do seu Pokémon possui somente uma cabeça e um par de braços? "),
-    read(Ans),
-    atualizar_formato(Ans, cabeca-e-bracos).
+write_question(4, cabeca-e-bracos) :-
+    write(" O formato do seu Pokémon possui somente uma cabeça e um par de braços? ").
 
-lidar_pergunta(cabeca) :-
-    write("O formato do seu Pokémon possui somente uma cabeça? "),
-    read(Ans),
-    atualizar_formato(Ans, cabeca).
+write_question(4, cabeca) :-
+    write(" O formato do seu Pokémon possui somente uma cabeça? ").
 
 % ---- Cor ---- %
-lidar_pergunta(verde) :-
-    write("A cor predominante do seu Pokémon é um tom da cor Verde? "),
-    read(Ans),
-    atualizar_cor(Ans, verde).
+write_question(5, Color) :-
+    write(" A cor predominante do seu Pokémon é um tom da cor "),
+    write(Color),
+    write("?").
 
-lidar_pergunta(vermelho) :-
-    write("A cor predominante do seu Pokémon é um tom da cor Vermelha? "),
-    read(Ans),
-    atualizar_cor(Ans, vermelho).
-
-lidar_pergunta(azul) :-
-    write("A cor predominante do seu Pokémon é um tom da cor Azul? "),
-    read(Ans),
-    atualizar_cor(Ans, azul).
-
-lidar_pergunta(roxo) :-
-    write("A cor predominante do seu Pokémon é um tom da cor Azul? "),
-    read(Ans),
-    atualizar_cor(Ans, roxo).
-
-lidar_pergunta(marrom) :-
-    write("A cor predominante do seu Pokémon é um tom da cor Marrom? "),
-    read(Ans),
-    atualizar_cor(Ans, marrom).
-
-lidar_pergunta(amarelo) :-
-    write("A cor predominante do seu Pokémon é um tom da cor Amarelo? "),
-    read(Ans),
-    atualizar_cor(Ans, amarelo).
-
-lidar_pergunta(rosa) :-
-    write("A cor predominante do seu Pokémon é um tom da cor Rosa? "),
-    read(Ans),
-    atualizar_cor(Ans, rosa).
-
-lidar_pergunta(cinza) :-
-    write("A cor predominante do seu Pokémon é um tom da cor Cinza? "),
-    read(Ans),
-    atualizar_cor(Ans, cinza).
