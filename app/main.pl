@@ -1,3 +1,4 @@
+:- module(main,[app/0]).
 :- use_module([perguntas]).
 :- use_module([define_pokemons]).
 :- use_module([menu]).
@@ -32,7 +33,7 @@ trata_entrada(_) :-
     app.
 
 start :-
-    shell('clear'),
+    %shell('clear'),
     print_header,
     print_instructions,
     write("Pokémom escolhido? Pressione qualquer tecla para continuar!"),
@@ -44,9 +45,10 @@ start :-
     
 flow :-
 %    shell('clear'),
-   print_header,
-   get_better_question(Question),
-   ask(Question).
+    print_header,
+    consult('perguntas.pl'),
+    get_better_question(Question),
+    ask(Question).
    % TODO!
    % verificar final -> uma função para verificar o que resta na base, pode ser feita nesse arquivo mesmo
    %                 -> caso tenha nada, significa que não conseguiu adivinhar

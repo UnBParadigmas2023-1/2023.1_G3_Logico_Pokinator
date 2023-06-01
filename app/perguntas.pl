@@ -1,6 +1,6 @@
+:- module(perguntas, [ask/1, limpa_perguntas/1, get_better_question/1]).
 :- use_module([define_pokemons]).
 :- use_module([bc_atualizacoes]).
-:- module(perguntas, [ask/1, limpa_perguntas/1, get_better_question/1]).
 
 
 :-style_check(-discontiguous).
