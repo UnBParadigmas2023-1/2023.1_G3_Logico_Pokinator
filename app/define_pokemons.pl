@@ -1,5 +1,5 @@
-:- module(define_pokemons, [pokemon/5, limpa_pokemons/1]).
-:- dynamic pokemon/5.
+:- module(define_pokemons, [pokemon/6, limpa_pokemons/1, get_by_paramm/3]).
+:- dynamic pokemon/6.
 
 :-style_check(-discontiguous).
 :-style_check(-singleton).
@@ -9,10 +9,25 @@ limpa_pokemons(X).
 limpa_pokemons1(X) :- retract(pokemon(_, _, _, _, _)).
 limpa_pokemons1(X).
 
+get_by_paramm(1, Paramm, Response) :-
+    findall(Target, pokemon(Target, Paramm, _, _, _, _), Response).
+
+get_by_paramm(2, Paramm, Response) :-
+    findall(Target, pokemon(Target, _, Paramm, _, _, _), Response).
+
+get_by_paramm(3, Paramm, Response) :-
+    findall(Target, pokemon(Target, _, _, Paramm, _, _), Response).
+
+get_by_paramm(4, Paramm, Response) :-
+    findall(Target, pokemon(Target, _, _, _, Paramm, _), Response).
+
+get_by_paramm(5, Paramm, Response) :-
+    findall(Target, pokemon(Target, _, _, _, _, Paramm), Response).
+
 % --------- BASE DE CONHECIMENTO ---------
 
 %% Pokemons ( nome, evolucao, tipo1, tipo2, formato, cor)
-pokemon('Bulbasaur', evo2 grama, veneno, quadrupede, verde).
+pokemon('Bulbasaur', evo2, grama, veneno, quadrupede, verde).
 pokemon('Ivysaur', evo1, grama, veneno, quadrupede, verde).
 pokemon('Venusaur', evo0, grama, veneno, quadrupede, verde).
 pokemon('Charmander', evo2, fogo, n, bipede-com-cauda, vermelho).
@@ -21,10 +36,10 @@ pokemon('Charizard', evo0, fogo, voador, bipede-com-cauda, vermelho).
 pokemon('Squirtle', evo2, agua, n, bipede-com-cauda, azul).
 pokemon('Watortle', evo1, agua, n, bipede-com-cauda, azul).
 pokemon('Blastoise', evo0, agua, n, bipede-com-cauda, azul).
-pokemon('Caterpie', evo2 inseto, n, insectoide, verde).
+pokemon('Caterpie', evo2, inseto, n, insectoide, verde).
 pokemon('Metapod', evo1, inseto, n, serpentino, verde).
 pokemon('Butterfree', evo0, inseto, voador, quatro-asas, roxo).
-pokemon('Weedle', evo2 inseto, veneno, insectoide, marrom).
+pokemon('Weedle', evo2, inseto, veneno, insectoide, marrom).
 pokemon('Kakuna', evo1, inseto, veneno, serpentino, amarelo).
 pokemon('Beedril', evo0, inseto, veneno, quatro-asas, amarelo).
 pokemon('Pidgey', evo2, normal, voador, duas-asas, marrom).
@@ -40,10 +55,10 @@ pokemon('Pikachu', evo1, eletrico, n, quadrupede, amarelo).
 pokemon('Raichu', evo0, eletrico, n, bipede-com-cauda, amarelo).
 pokemon('Sandshrew', evo1, solo, n, bipede-com-cauda, amarelo).
 pokemon('Sandslash', evo0, solo, n, bipede-com-cauda, amarelo).
-pokemon('Nidoran F', evo2 veneno, n, quadrupede, azul).
+pokemon('Nidoran F', evo2, veneno, n, quadrupede, azul).
 pokemon('Nidorina', evo1, veneno, n, quadrupede, azul).
 pokemon('Nidoqueen', evo0, veneno, solo, bipede-com-cauda, azul).
-pokemon('Nidoran M', evo2 veneno, n, quadrupede, roxo).
+pokemon('Nidoran M', evo2, veneno, n, quadrupede, roxo).
 pokemon('Nidorino', evo1, veneno, n, quadrupede, roxo).
 pokemon('Nidoking', evo0, veneno, solo, bipede-com-cauda, roxo).
 pokemon('Clefairy', evo1, fada, n, bipede-com-cauda, rosa).
@@ -107,8 +122,8 @@ pokemon('Gastly', evo2, fantasma, veneno, cabeca, roxo).
 pokemon('Haunter', evo1, fantasma, veneno, cabeca-e-bracos, roxo).
 pokemon('Gengar', evo0, fantasma, veneno, bipede-com-cauda, roxo).
 pokemon('Onix', evo0, pedra, solo, serpentino, cinza).
-pokemon('Drowzee', evo1, psiquico, , bipede-sem-cauda, amarelo).
-pokemon('Hypno', evo0, psiquico, , bipede-sem-cauda, amarelo).
+pokemon('Drowzee', evo1, psiquico, n, bipede-sem-cauda, amarelo).
+pokemon('Hypno', evo0, psiquico, n, bipede-sem-cauda, amarelo).
 pokemon('Krabby', evo1, agua, n, insectoide, vermelho).
 pokemon('Kingler', evo0, agua, n, insectoide, vermelho).
 pokemon('Voltorb', evo1, eletrico, n, cabeca, vermelho).
@@ -124,9 +139,9 @@ pokemon('Koffing', evo1, veneno, n, cabeca, roxo).
 pokemon('Weezing', evo0, veneno, n, multiplos-corpos, roxo).
 pokemon('Rhyhorn', evo1, solo, pedra, quadrupede, cinza).
 pokemon('Rhydon', evo0, solo, pedra, bipede-com-cauda, cinza).
-pokemon('Chansey', evo0, normal, , bipede-com-cauda, rosa).
-pokemon('Tangela', evo0, grama, , cabeca-e-pernas, azul).
-pokemon('Kangaskhan', evo0, normal, , bipede-com-cauda, marrom).
+pokemon('Chansey', evo0, normal, n, bipede-com-cauda, rosa).
+pokemon('Tangela', evo0, grama, n, cabeca-e-pernas, azul).
+pokemon('Kangaskhan', evo0, normal, n, bipede-com-cauda, marrom).
 pokemon('Horsea', evo1, agua, n, cabeca-e-base, azul).
 pokemon('Seadra', evo0, agua, n, cabeca-e-base, azul).
 pokemon('Goldeen', evo1, agua, n, barbatanas, vermelho).
@@ -136,15 +151,15 @@ pokemon('Starmie', evo0, agua, psiquico, cabeca-e-base, roxo).
 pokemon('Mr.Mime', evo0, psiquico, fada, bipede-sem-cauda, rosa).
 pokemon('Scyther', evo0, inseto, voador, quatro-asas, verde).
 pokemon('Jynx', evo0, gelo, psiquico, bipede-sem-cauda, vermelho).
-pokemon('Electabuzz', evo0, eletrico, , bipede-com-cauda, amarelo).
+pokemon('Electabuzz', evo0, eletrico, n, bipede-com-cauda, amarelo).
 pokemon('Magmar', evo0, fogo, n, bipede-com-cauda, vermelho).
 pokemon('Pinsir', evo0, inseto, n, bipede-sem-cauda, marrom).
-pokemon('Tauros' evo0, normal, n, quadrupede, marrom).
+pokemon('Tauros', evo0, normal, n, quadrupede, marrom).
 pokemon('Magikarp', evo1, agua, n, barbatanas, vermelho).
 pokemon('Gyarados', evo0, agua, voador, serpentino, azul).
 pokemon('Lapras', evo0, agua, gelo, barbatanas, azul).
 pokemon('Ditto', evo0, normal, n, cabeca, roxo).
-pokemon('Eevee', 3, normal, n, quadrupede, marrom).
+pokemon('Eevee', evo3, normal, n, quadrupede, marrom).
 pokemon('Vaporeon', evo0, agua, n, quadrupede, azul).
 pokemon('Jolteon', evo0, eletrico, n, quadrupede, amarelo).
 pokemon('Flareon', evo0, fogo, n, quadrupede, vermelho).
@@ -160,6 +175,6 @@ pokemon('Zapdos', evo0, eletrico, voador, duas-asas, amarelo).
 pokemon('Moltres', evo0, fogo, voador, duas-asas, amarelo).
 pokemon('Dratini', evo2, dragao, n, serpentino, azul).
 pokemon('Dragonair', evo1, dragao, n, serpentino, azul).
-pokemon('Dragonite', evo0, , dragao, voador, bipede-com-cauda, amarelo).
+pokemon('Dragonite', evo0, dragao, voador, bipede-com-cauda, amarelo).
 pokemon('Mewtwo', evo0, psiquico, n, bipede-com-cauda, roxo).
 pokemon('Mew', evo0, psiquico, n, bipede-com-cauda, rosa).
