@@ -21,7 +21,6 @@ remove_out([H|T], Lista) :-
 
 remove_out([], Lista) :- !.
 
-
 exclui_pokemons_da_lista(ListaDePokemons) :-
     findall(Pokemon, pokemon(Pokemon, _, _, _, _, _, _), TodosPokemons),
     remove_in(TodosPokemons, ListaDePokemons).
