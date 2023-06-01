@@ -1,5 +1,7 @@
-:- module(perguntas, [lidar_pergunta/1, limpa_perguntas/1]).
-:- use_module([bc_atualizacoes]).
+:- module(perguntas, [lidar_pergunta/1, limpa_perguntas/1, get_better_question_v2/1]).
+%:- use_module([bc_atualizacoes]).
+
+:- use_module([define_pokemons]).
 
 :-style_check(-discontiguous).
 :-style_check(-singleton).
@@ -9,6 +11,57 @@ limpa_perguntas(X).
 limpa_perguntas1(X) :- retract(pergunta(_, _)).
 limpa_perguntas1(X).
 
+%Calculo de pergunta %
+
+get_better_question_v2(Question) :-
+    get_paramms_set(A, A, _, _, _, _, ParammsSet1),
+    max_relative_amount(ParammsSet1, 1, AmountList1),
+    get_paramms_set(B, _, B, _, _, _, ParammsSet2),
+    max_relative_amount(ParammsSet2, 2, AmountList2),
+    get_paramms_set(C, _, _, C, _, _, ParammsSet3),
+    max_relative_amount(ParammsSet3, 3, AmountList3),
+    get_paramms_set(D, _, _, _, D, _, ParammsSet4),
+    max_relative_amount(ParammsSet4, 4, AmountList4),
+    get_paramms_set(E, _, _, _, _, E, ParammsSet5),
+    max_relative_amount(ParammsSet5, 5, AmountList5),
+    
+    %write(AmountList1), nl,
+    %write(AmountList2), nl,
+    %write(AmountList3), nl,
+    %write(AmountList4), nl,
+    %write(AmountList5), nl,
+   
+    compare_amounts([AmountList1, AmountList2, AmountList3, AmountList4, AmountList5], Question).
+    %write(Question).  
+
+get_paramms_set(T, A, B, C, D, E, Res) :-
+    setof(T, A^B^C^D^E^N^pokemon(N, A, B, C, D, E), Res).
+
+max_relative_amount([], N, [_, _, 0]).
+
+max_relative_amount([Head | Tail], N, Res) :-
+    get_relative_amounts(N, Head, List),
+    max_relative_amount(Tail, N, AuxRes),
+    compare_amounts(List, AuxRes, Res).
+
+get_relative_amounts(N, Paramm, Res) :-
+    get_by_paramm(N, Paramm, List),
+    length(List, Len),
+    Res = [N, Paramm, Len].
+
+compare_amounts([], [_, _, 0]).
+
+compare_amounts([Head | Tail], Res) :-
+    compare_amounts(Tail, AuxRes),
+    compare_amounts(Head, AuxRes, Res).    
+
+compare_amounts([N1, P1, Len1], [N2, P2, Len2], [Nr, Pr, Lenr]) :-
+    (Len1 >= Len2 ->
+        Lenr = Len1, Pr = P1, Nr = N1
+    ;
+        Lenr = Len2, Pr = P2, Nr = N2
+    ).
+    
 % ---- Evolução ---- %
 %% Pokemons ( nome, evolucao, tipo1, tipo2, formato, cor)
 lidar_pergunta(evo2) :-
