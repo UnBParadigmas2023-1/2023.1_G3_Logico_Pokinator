@@ -45,6 +45,7 @@ flow :-
    shell('clear'),
    print_header,
    get_better_question(Question),
+   read_line_to_codes(user_input, _),
    ask(Question).
    % TODO!
    % verificar final -> uma função para verificar o que resta na base, pode ser feita nesse arquivo mesmo
