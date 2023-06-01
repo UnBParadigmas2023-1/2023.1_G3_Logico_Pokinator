@@ -1,11 +1,8 @@
-:- module(bc_atualizacoes, [
-    atualizar_pokemons/3]).
-:- use_module([define_pokemons).
-% :- use_module([bc_remove_perguntas]).
+:- module(bc_atualizacoes, [atualizar_pokemons/3]).
+:- use_module([define_pokemons]).
 
 
 % --- Atualizar Pokemons --- %
-%  Evolução
 atualizar_pokemons(s, campo, valor):- 
     get_by_paramm(campo,valor,PokemonsListados),
     exclui_pokemons_fora_da_lista(PokemonsListados).

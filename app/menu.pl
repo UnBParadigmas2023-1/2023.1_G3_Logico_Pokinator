@@ -4,7 +4,7 @@
     print_main_menu/0,
     print_instructions/0,
     print_invalid_command/0,
-    print_pokemon_guessed/0
+    print_pokemon_guessed/1
 ]).
 
 print_header :-

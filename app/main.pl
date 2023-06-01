@@ -1,6 +1,7 @@
-:- use_module(menu).
-:- use_module(define_pokemons).
-:- use_module(perguntas).
+:- use_module([perguntas]).
+:- use_module([define_pokemons]).
+:- use_module([menu]).
+
 
 :- style_check(-discontiguous).
 :- style_check(-singleton).
@@ -8,7 +9,7 @@
 :- initialization(app).
 
 app :-
-    shell('clear'),
+    % shell('clear'),
     print_header,
     print_main_menu,
     trata_entrada.
@@ -42,7 +43,7 @@ start :-
     flow.
     
 flow :-
-   shell('clear'),
+%    shell('clear'),
    print_header,
    get_better_question(Question),
    ask(Question).

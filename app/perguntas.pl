@@ -1,6 +1,7 @@
+:- use_module([define_pokemons]).
+:- use_module([bc_atualizacoes]).
 :- module(perguntas, [ask/1, limpa_perguntas/1, get_better_question/1]).
 
-:- use_module([define_pokemons]).
 
 :-style_check(-discontiguous).
 :-style_check(-singleton).
@@ -24,14 +25,8 @@ get_better_question(Question) :-
     get_paramms_set(E, _, _, _, _, E, ParammsSet5),
     max_relative_amount(ParammsSet5, 5, AmountList5),
     
-    %write(AmountList1), nl,
-    %write(AmountList2), nl,
-    %write(AmountList3), nl,
-    %write(AmountList4), nl,
-    %write(AmountList5), nl,
-   
+
     compare_amounts([AmountList1, AmountList2, AmountList3, AmountList4, AmountList5], Question).
-    %write(Question).  
 
 get_paramms_set(T, A, B, C, D, E, Res) :-
     setof(T, A^B^C^D^E^N^pokemon(N, A, B, C, D, E), Res).
@@ -66,12 +61,11 @@ compare_amounts([N1, P1, Len1], [N2, P2, Len2], [Nr, Pr, Lenr]) :-
 ask([N, Paramm, _]) :-
     write_question(N, Paramm), nl, nl,
     write(" [s. ou n.] "),
-    read(Ans).
+    read(Ans),
+    atualizar_pokemons(Ans,N,Paramm).
     % TODO!
     % tratar a resposta -> remover o case da resposta
     %                   -> chamar a tela de erro para entradas invalidas e voltar pra pergunta
-    % atualizar a base  -> devem ser removidos todos os pokemons englobados na negativa da resposta
-    %                   -> atualização deve ser implementada em outro arquivo
     % melhorar as perguntas sobre o formato do pokemon
 
 % ---- Evolução ---- %
