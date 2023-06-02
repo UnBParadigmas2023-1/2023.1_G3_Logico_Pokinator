@@ -22,9 +22,8 @@
 |18/0078640|Yuri Alves bacarias|
 
 ## Sobre 
-Descreva o seu projeto em linhas gerais. 
-Use referências, links, que permitam conhecer um pouco mais sobre o projeto.
-Capriche nessa seção, pois ela é a primeira a ser lida pelos interessados no projeto.
+
+Pokinator é um jogo que tenta adivinhar em qual Pokemon vocẽ está pensando. Utilizando a lógica do jogo [Akinator](https://pt.akinator.com/), o Pokinator faz perguntas sobre as características dos Pokemons e remove os que não condizem com a resposta, até o ponto em que ele adivinhe o Pokemon que o jogador está pensado. 
 
 ## Screenshots
 Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
@@ -75,4 +74,5 @@ Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não es
 
 ## Fontes
 > https://docs.docker.com/engine/install/ubuntu/
+> https://pt.akinator.com/
 
