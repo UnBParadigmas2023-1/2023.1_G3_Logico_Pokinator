@@ -58,7 +58,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Antonio Rangel Chaves | Ajuda na verificação dos pokemons restantes na base de conhecimento depois da respostas das perguntas | Ruim | 
 | Daniel Porto de Souza | - | - | 
 | João Gabriel de Campos de Matos | Criação do modulo bc_atualizações, utilizado para atualizar a lista de pokemons com base nas respostas do usuário. | Boa | 
-| Kess Jhones Gomes Tavares | - | - | 
+| Kess Jhones Gomes Tavares | Tratamento dos inputs e auxilio no fluxo de resposta final para o úsuario | Regular | 
 | Mateus Moreira Lima | Participei na parte de verificação e chute de pokémons da base, quando pokémons com os mesmos parâmetros não era possível chegar a uma única conclusão. | Regular |
 | Vitor Diniz Pagani Vieira Ribeiro | Criação da verificação dos pokemons restantes na base de conhecimento depois da respostas das perguntas, e participação da criação da verificação para cada tipo de caso da base resultante. | Regular | 
 | Yan Andrade de Sena | Criação das perguntas e também da base de pokémons | Boa | 
