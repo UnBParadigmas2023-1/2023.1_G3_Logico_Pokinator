@@ -62,7 +62,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Mateus Moreira Lima | - | - | 
 | Vitor Diniz Pagani Vieira Ribeiro | - | - | 
 | Yan Andrade de Sena | - | - | 
-| Yuri Alves Bacarias | regular | contribuição na formação da planilha de pokemons, contruibuição na exclusão dos pokemons e na logica do bancos de dados dos pokemons | 
+| Yuri Alves Bacarias | contribuição na formação da planilha de pokemons, contruibuição na exclusão dos pokemons e na logica do bancos de dados dos pokemons |  regular | 
 
 ## Outros 
 Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
