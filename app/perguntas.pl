@@ -1,14 +1,10 @@
-:- module(perguntas, [ask/1, limpa_perguntas/1, get_better_question/1, handle_input/2]).
-
+:- module(perguntas, [ask/1, get_better_question/1]).
 :- use_module([define_pokemons]).
+:- use_module([bc_atualizacoes]).
+:- use_module([menu]).
 
 :-style_check(-discontiguous).
 :-style_check(-singleton).
-
-limpa_perguntas(X) :- limpa_perguntas1(X), fail.
-limpa_perguntas(X).
-limpa_perguntas1(X) :- retract(pergunta(_, _)).
-limpa_perguntas1(X).
 
 % Calculo de pergunta %
 
@@ -31,7 +27,7 @@ get_better_question(Question) :-
     %write(AmountList5), nl,
    
     compare_amounts([AmountList1, AmountList2, AmountList3, AmountList4, AmountList5], Question).
-    %write(Question).  
+    %write(Question), nl, nl.  
 
 get_paramms_set(T, A, B, C, D, E, Res) :-
     setof(T, A^B^C^D^E^N^pokemon(N, A, B, C, D, E), Res).
@@ -45,8 +41,14 @@ max_relative_amount([Head | Tail], N, Res) :-
 
 get_relative_amounts(N, Paramm, Res) :-
     get_by_paramm(N, Paramm, List),
+    get_all(BC),
+    length(BC, L),
     length(List, Len),
-    Res = [N, Paramm, Len].
+    correct(L, Len, Tam),
+    Res = [N, Paramm, Tam].
+
+correct(A, A, 0).
+correct(_, B, B).
 
 compare_amounts([], [_, _, 0]).
 
@@ -75,17 +77,15 @@ process_input(x, _, _) :-
     halt.
 
 process_input(n, N, Paramm) :-
-    write('nao').
+    atualizar_pokemons(n, N, Paramm).
 
 process_input(s, N, Paramm) :-
-    write('sim').
+    atualizar_pokemons(s, N, Paramm).
 
 process_input(_, N, Paramm) :-
     print_invalid_command.
-
-    % TODO!
-    % atualizar a base  -> devem ser removidos todos os pokemons englobados na negativa da resposta
-    %                   -> atualização deve ser implementada em outro arquivo
+    
+    %TODO!
     % melhorar as perguntas sobre o formato do pokemon
 
 % ---- Evolução ---- %

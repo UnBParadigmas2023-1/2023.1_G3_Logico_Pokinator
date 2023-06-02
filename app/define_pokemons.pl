@@ -1,4 +1,5 @@
-:- module(define_pokemons, [pokemon/6, limpa_pokemons/1, get_by_paramm/3]).
+:- module(define_pokemons, [pokemon/6, limpa_pokemons/1, get_by_paramm/3, get_all/1]).
+
 :- dynamic pokemon/6.
 
 :-style_check(-discontiguous).
@@ -23,6 +24,9 @@ get_by_paramm(4, Paramm, Response) :-
 
 get_by_paramm(5, Paramm, Response) :-
     findall(Target, pokemon(Target, _, _, _, _, Paramm), Response).
+
+get_all(Response):-
+    findall( Target, pokemon(Target, _, _, _, _, _), Response).
 
 % --------- BASE DE CONHECIMENTO ---------
 
