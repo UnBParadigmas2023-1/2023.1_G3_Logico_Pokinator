@@ -45,11 +45,26 @@ flow :-
    shell('clear'),
    print_header,
    get_better_question(Question),
-   ask(Question).
+   ask(Question),
+   verify.
+
+verify :-
+   get_all(Res),
+   length(Res, Len),
+   verify(Len).
+
+verify(1) :-
+    findall(T, pokemon(T, _, _, _, _, _), P),
+    write(P), nl,
+    halt.
+
+verify(X) :-
+    flow.
+    
    % TODO!
    % verificar final -> uma função para verificar o que resta na base, pode ser feita nesse arquivo mesmo
    %                 -> caso tenha nada, significa que não conseguiu adivinhar
    %                 -> caso tenha 1,  é hora de chutar
-   %                 -> talvez seja preciso chutar mais de uma vez no caso das perguntas terem acabado (hitmonlee e hitmonchan)
+   %                 -> talvez seja preciso chutar mais de uma vez no caso das perguntas terem acabado (hitmonlee e hitmonchan)(magikarp e goldeen)
    %                 -> sendo outro caso, volta pro começo do flow
 
