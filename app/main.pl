@@ -3,14 +3,13 @@
 :- use_module([define_pokemons]).
 :- use_module([menu]).
 
-
 :- style_check(-discontiguous).
 :- style_check(-singleton).
 
 :- initialization(app).
 
 app :-
-    % shell('clear'),
+    shell('clear'),
     print_header,
     print_main_menu,
     trata_entrada.
@@ -29,11 +28,10 @@ trata_entrada(2) :-
 
 trata_entrada(_) :-
     print_invalid_command,
-    sleep(3),
     app.
 
 start :-
-    %shell('clear'),
+    shell('clear'),
     print_header,
     print_instructions,
     write("Pokémom escolhido? Pressione qualquer tecla para continuar!"),
@@ -44,11 +42,10 @@ start :-
     flow.
     
 flow :-
-%    shell('clear'),
-    print_header,
-    get_better_question(Question),
-    read_line_to_codes(user_input, _),
-    ask(Question).
+   shell('clear'),
+   print_header,
+   get_better_question(Question),
+   ask(Question).
    % TODO!
    % verificar final -> uma função para verificar o que resta na base, pode ser feita nesse arquivo mesmo
    %                 -> caso tenha nada, significa que não conseguiu adivinhar

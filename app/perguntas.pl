@@ -1,9 +1,7 @@
-:- module(perguntas, [ask/1, limpa_perguntas/1, get_better_question/1, handle_input/2]).
+:- module(perguntas, [ask/1, limpa_perguntas/1, get_better_question/1]).
 :- use_module([define_pokemons]).
 :- use_module([bc_atualizacoes]).
 :- use_module([menu]).
-%:- module(perguntas, [ask/1, limpa_perguntas/1, get_better_question/1]).
-
 
 :-style_check(-discontiguous).
 :-style_check(-singleton).
@@ -27,8 +25,14 @@ get_better_question(Question) :-
     get_paramms_set(E, _, _, _, _, E, ParammsSet5),
     max_relative_amount(ParammsSet5, 5, AmountList5),
     
-
+    %write(AmountList1), nl,
+    %write(AmountList2), nl,
+    %write(AmountList3), nl,
+    %write(AmountList4), nl,
+    %write(AmountList5), nl,
+   
     compare_amounts([AmountList1, AmountList2, AmountList3, AmountList4, AmountList5], Question).
+    %write(Question).  
 
 get_paramms_set(T, A, B, C, D, E, Res) :-
     setof(T, A^B^C^D^E^N^pokemon(N, A, B, C, D, E), Res).
@@ -60,40 +64,29 @@ compare_amounts([N1, P1, Len1], [N2, P2, Len2], [Nr, Pr, Lenr]) :-
 
 ask([N, Paramm, _]) :-
     write_question(N, Paramm), nl, nl,
-    write(' [s. ou n.] '),
+    write('(x. sair) [s. ou n.] '),
     handle_input(N, Paramm).
 
-handle_input(N, Paramm):-
-    read_line_to_codes(user_input, AnsCodes),
-    (   AnsCodes = [FirstCode|_],
-        char_type(FirstCode, upper),
-        atom_codes(AnsAtom, AnsCodes),
-        downcase_atom(AnsAtom, Ans),
-        write(AnsAtom),
-        process_input(Ans, N, Paramm)
-    ;   atom_codes(AnsAtom, AnsCodes),
-        downcase_atom(AnsAtom, Ans),
-        process_input(Ans, N, Paramm)
-    ).
+handle_input(N, Paramm) :-
+    read(Ans),
+    process_input(Ans, N, Paramm).
 
-process_input(s, N, Paramm) :-
-    write('sim'),
-    ask([N, Paramm, _]).
+process_input(x, _, _) :-
+    write(' Até a próxima! o/'), nl,
+    halt.
 
 process_input(n, N, Paramm) :-
-    write('nao'),
-    ask([N, Paramm, _]).
+    write('nao').
+
+process_input(s, N, Paramm) :-
+    write('sim').
 
 process_input(_, N, Paramm) :-
-    print_invalid_command,
-    sleep(3),
-    ask([N, Paramm, _]).
-
-
+    print_invalid_command.
 
     % TODO!
-    % tratar a resposta -> remover o case da resposta
-    %                   -> chamar a tela de erro para entradas invalidas e voltar pra pergunta
+    % atualizar a base  -> devem ser removidos todos os pokemons englobados na negativa da resposta
+    %                   -> atualização deve ser implementada em outro arquivo
     % melhorar as perguntas sobre o formato do pokemon
 
 % ---- Evolução ---- %

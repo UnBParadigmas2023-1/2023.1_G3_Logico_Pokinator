@@ -2,6 +2,9 @@
 :- use_module([define_pokemons]).
 
 
+:-style_check(-discontiguous).
+:-style_check(-singleton).
+
 % --- Atualizar Pokemons --- %
 atualizar_pokemons(s, campo, valor):- 
     get_by_paramm(campo,valor,PokemonsListados),
