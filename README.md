@@ -61,7 +61,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Kess Jhones Gomes Tavares | - | - | 
 | Mateus Moreira Lima | - | - | 
 | Vitor Diniz Pagani Vieira Ribeiro | Criação da verificação dos pokemons restantes na base de conhecimento depois da respostas das perguntas, e participação da criação da verificação para cada tipo de caso da base resultante. | Regular | 
-| Yan Andrade de Sena | - | - | 
+| Yan Andrade de Sena | Criação das perguntas e também da base de pokémons | Boa | 
 | Yuri Alves Bacarias | contribuição na formação da planilha de pokemons, contruibuição na exclusão dos pokemons e na logica do bancos de dados dos pokemons |  regular | 
 
 ## Outros 
