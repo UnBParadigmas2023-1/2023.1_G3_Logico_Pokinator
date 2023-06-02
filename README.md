@@ -23,7 +23,7 @@
 
 ## Sobre 
 
-Pokinator é um jogo que tenta adivinhar em qual Pokemon vocẽ está pensando. Utilizando a lógica do jogo [Akinator](https://pt.akinator.com/), o Pokinator faz perguntas sobre as características dos Pokemons e remove os que não condizem com a resposta, até o ponto em que ele adivinhe o Pokemon que o jogador está pensado. 
+Pokinator é um jogo que tenta adivinhar em qual Pokemon você está pensando. Utilizando a lógica do jogo [Akinator](https://pt.akinator.com/), o Pokinator faz perguntas sobre as características dos Pokemons e remove os que não condizem com a resposta, até o ponto em que ele adivinhe o Pokemon que o jogador está pensado. 
 
 ## Screenshots
 Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
