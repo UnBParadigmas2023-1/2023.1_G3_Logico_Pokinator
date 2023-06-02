@@ -55,7 +55,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -- | -- | -- |
 | Fulano  |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
-| Antonio Igor Carvalho | Regular | Criação do módulo de mensagens utilizadas pelo menu, pequena contribuição na planilha de pokemons e suas informações, pequena contribuição na parte de analisar se restam pokemons na base de conhecimento | 
+| Antonio Igor Carvalho | Criação do módulo de mensagens utilizadas pelo menu, pequena contribuição na planilha de pokemons e suas informações, pequena contribuição na parte de analisar se restam pokemons na base de conhecimento | Regular | 
 | Antonio Rangel Chaves | - | - | 
 | Daniel Porto de Souza | - | - | 
 | João Gabriel de Campos de Matos | Criação do modulo bc_atualizações, utilizado para atualizar a lista de pokemons com base nas respostas do usuário. | Boa | 
