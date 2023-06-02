@@ -1,4 +1,4 @@
-:- module(perguntas, [ask/1, limpa_perguntas/1, get_better_question/1, handle_input/1]).
+:- module(perguntas, [ask/1, limpa_perguntas/1, get_better_question/1, handle_input/2]).
 
 :- use_module([define_pokemons]).
 
@@ -66,31 +66,20 @@ ask([N, Paramm, _]) :-
     write(' [s. ou n.] '),
     handle_input(N, Paramm).
 
-handle_input(N, Paramm):-
-    read_line_to_codes(user_input, AnsCodes),
-    (   AnsCodes = [FirstCode|_],
-        char_type(FirstCode, upper),
-        atom_codes(AnsAtom, AnsCodes),
-        downcase_atom(AnsAtom, Ans),
-        process_input(Ans, N, Paramm)
-    ;   atom_codes(AnsAtom, AnsCodes),
-        downcase_atom(AnsAtom, Ans),
-        process_input(Ans, N, Paramm)
-    ).
+handle_input(N, Paramm) :-
+    read(Ans),
+    process_input(Ans, N, Paramm).
 
-process_input('s', N, Paramm) :-
-    write('Resposta positiva!'), nl,
-    ask([N, Paramm, _]).
+process_input(n, N, Paramm) :-
+    write('nao').
 
-process_input('n', N, Paramm) :-
-    write('Resposta negativa!'), nl,
-    ask([N, Paramm, _]).
+process_input(s, N, Paramm) :-
+    write('sim').
 
 process_input(_, N, Paramm) :-
     print_invalid_command,
-    sleep(3),
+    sleep(1),
     ask([N, Paramm, _]).
-
 
 
     % TODO!
