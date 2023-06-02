@@ -53,13 +53,24 @@ verify :-
    length(Res, Len),
    verify(Len).
 
+verify(0) :
+    write("Não consegui adivinhar, você venceu!"), 
+    nl,
+    halt.
+
 verify(1) :-
     findall(T, pokemon(T, _, _, _, _, _), P),
     write(P), nl,
     halt.
 
 verify(2) :-
-    write("O antonio vai pagar pra geral, la ele").
+    findall(T, pokemon(T, _, _, _, _, _), P),
+    write(P), nl,
+    P = [First|_],
+    write("O seu pokémon é: "), write(First), nl,
+    write("Acertei? (s/n)"), nl,
+    read(Enter),
+    halt.
 
 verify(X) :-
     flow.

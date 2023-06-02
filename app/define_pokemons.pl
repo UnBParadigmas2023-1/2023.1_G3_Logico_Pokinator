@@ -32,5 +32,5 @@ get_all(Response):-
 
 %% Pokemons ( nome, evolucao, tipo1, tipo2, formato, cor)
 pokemon('Bulbasaur', evo2, grama, veneno, quadrupede, verde).
-pokemon('Bulbasaur', evo2, grama, veneno, quadrupede, verde).
+pokemon('Ivysaur', evo2, grama, veneno, quadrupede, verde).
 
