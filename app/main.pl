@@ -58,6 +58,9 @@ verify(1) :-
     write(P), nl,
     halt.
 
+verify(2) :-
+    write("O antonio vai pagar pra geral, la ele").
+
 verify(X) :-
     flow.
     
