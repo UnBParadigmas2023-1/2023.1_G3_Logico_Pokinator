@@ -63,12 +63,16 @@ compare_amounts([N1, P1, Len1], [N2, P2, Len2], [Nr, Pr, Lenr]) :-
 
 ask([N, Paramm, _]) :-
     write_question(N, Paramm), nl, nl,
-    write(' [s. ou n.] '),
+    write('(x. sair) [s. ou n.] '),
     handle_input(N, Paramm).
 
 handle_input(N, Paramm) :-
     read(Ans),
     process_input(Ans, N, Paramm).
+
+process_input(x, _, _) :-
+    write(' Até a próxima! o/'), nl,
+    halt.
 
 process_input(n, N, Paramm) :-
     write('nao').
@@ -77,14 +81,9 @@ process_input(s, N, Paramm) :-
     write('sim').
 
 process_input(_, N, Paramm) :-
-    print_invalid_command,
-    sleep(1),
-    ask([N, Paramm, _]).
-
+    print_invalid_command.
 
     % TODO!
-    % tratar a resposta -> remover o case da resposta
-    %                   -> chamar a tela de erro para entradas invalidas e voltar pra pergunta
     % atualizar a base  -> devem ser removidos todos os pokemons englobados na negativa da resposta
     %                   -> atualização deve ser implementada em outro arquivo
     % melhorar as perguntas sobre o formato do pokemon

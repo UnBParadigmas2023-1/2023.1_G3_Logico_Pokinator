@@ -27,7 +27,6 @@ trata_entrada(2) :-
 
 trata_entrada(_) :-
     print_invalid_command,
-    sleep(3),
     app.
 
 start :-

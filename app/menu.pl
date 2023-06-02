@@ -18,8 +18,8 @@ print_header :-
 print_main_menu :-
     write("Digite uma das opções:"), nl,
     nl,
-    write("[1] Começar"), nl,
-    write("[2] Sair do Jogo"), nl,
+    write("[1.] Começar"), nl,
+    write("[2.] Sair do Jogo"), nl,
     nl.
 
 print_instructions :-
@@ -46,7 +46,8 @@ print_invalid_command :-
     write('/_______  / |____|_  /|____|_  /\\_______  /'), nl,
     write('        \\/         \\/        \\/         \\/ '), nl,
     write("Atenção: A opção digitada não foi reconhecida como um comando válido!"), nl,
-    write("Por favor, digite novamente."), nl.
+    write("Por favor, digite novamente."), nl,
+    sleep(3).
 
 print_pokemon_guessed(nome_pokemon) :-
     nl,
