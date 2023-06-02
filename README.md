@@ -58,7 +58,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Antonio Igor Carvalho | Regular | Criação do módulo de mensagens utilizadas pelo menu, pequena contribuição na planilha de pokemons e suas informações, pequena contribuição na parte de analisar se restam pokemons na base de conhecimento | 
 | Antonio Rangel Chaves | - | - | 
 | Daniel Porto de Souza | - | - | 
-| João Gabriel de Campos de Matos | - | - | 
+| João Gabriel de Campos de Matos | Criação do modulo bc_atualizações, utilizado para atualizar a lista de pokemons com base nas respostas do usuário. | Boa | 
 | Kess Jhones Gomes Tavares | - | - | 
 | Mateus Moreira Lima | - | - | 
 | Vitor Diniz Pagani Vieira Ribeiro | - | - | 
