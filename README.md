@@ -54,7 +54,6 @@ TEMPO: +/- 15min
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -- | -- | -- |
-| Fulano  |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
 | Antonio Igor Carvalho | Criação do módulo de mensagens utilizadas pelo menu, pequena contribuição na planilha de pokemons e suas informações, pequena contribuição na parte de analisar se restam pokemons na base de conhecimento | Regular | 
 | Antonio Rangel Chaves | - | - | 
 | Daniel Porto de Souza | - | - | 
@@ -63,7 +62,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Mateus Moreira Lima | - | - | 
 | Vitor Diniz Pagani Vieira Ribeiro | - | - | 
 | Yan Andrade de Sena | - | - | 
-| Yuri Alves Bacarias | - | - | 
+| Yuri Alves Bacarias | regular | contribuição na formação da planilha de pokemons, contruibuição na exclusão dos pokemons e na logica do bancos de dados dos pokemons | 
 
 ## Outros 
 Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
