@@ -54,16 +54,15 @@ TEMPO: +/- 15min
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -- | -- | -- |
-| Fulano  |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
-| Antonio Igor Carvalho | - | - | 
-| Antonio Rangel Chaves | - | - | 
+| Antonio Igor Carvalho | Criação do módulo de mensagens utilizadas pelo menu, pequena contribuição na planilha de pokemons e suas informações, pequena contribuição na parte de analisar se restam pokemons na base de conhecimento | Regular | 
+| Antonio Rangel Chaves | Ajuda na verificação dos pokemons restantes na base de conhecimento depois da respostas das perguntas | Ruim | 
 | Daniel Porto de Souza | - | - | 
-| João Gabriel de Campos de Matos | - | - | 
-| Kess Jhones Gomes Tavares | - | - | 
-| Mateus Moreira Lima | - | - | 
-| Vitor Diniz Pagani Vieira Ribeiro | - | - | 
-| Yan Andrade de Sena | - | - | 
-| Yuri Alves Bacarias | - | - | 
+| João Gabriel de Campos de Matos | Criação do modulo bc_atualizações, utilizado para atualizar a lista de pokemons com base nas respostas do usuário. | Boa | 
+| Kess Jhones Gomes Tavares | Tratamento dos inputs e auxilio no fluxo de resposta final para o úsuario | Regular | 
+| Mateus Moreira Lima | Participei na parte de verificação e chute de pokémons da base, quando pokémons com os mesmos parâmetros não era possível chegar a uma única conclusão. | Regular |
+| Vitor Diniz Pagani Vieira Ribeiro | Criação da verificação dos pokemons restantes na base de conhecimento depois da respostas das perguntas, e participação da criação da verificação para cada tipo de caso da base resultante. | Regular | 
+| Yan Andrade de Sena | Criação das perguntas e também da base de pokémons | Boa | 
+| Yuri Alves Bacarias | contribuição na formação da planilha de pokemons, contruibuição na exclusão dos pokemons e na logica do bancos de dados dos pokemons |  regular | 
 
 ## Outros 
 Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
