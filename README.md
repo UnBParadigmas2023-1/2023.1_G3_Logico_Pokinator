@@ -25,8 +25,6 @@
 
 Pokinator é um jogo que tenta adivinhar em qual Pokemon você está pensando. Utilizando a lógica do jogo [Akinator](https://pt.akinator.com/), o Pokinator faz perguntas sobre as características dos Pokemons e remove os que não condizem com a resposta, até o ponto em que ele adivinhe o Pokemon que o jogador está pensado. 
 
-## Screenshots
-Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
 
 ## Instalação 
 **Linguagens**: Prolog<br>
@@ -41,11 +39,11 @@ Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcioname
 
 ## Screenshots
 
-![Screenshot 2023-06-02 at 21.08.28](./assets/Screenshot 2023-06-02 at 21.08.28.png)
-![Screenshot 2023-06-02 at 21.08.40](./assets/Screenshot 2023-06-02 at 21.08.40.png)
-![Screenshot 2023-06-02 at 21.08.58](./assets/Screenshot 2023-06-02 at 21.08.58.png)
-![Screenshot 2023-06-02 at 21.23.09](./assets/Screenshot 2023-06-02 at 21.23.09.png)
-![Screenshot 2023-06-02 at 21.23.22](./assets/Screenshot 2023-06-02 at 21.23.22.png)
+![comeco](./assets/comeco.png)
+![comeco2](./assets/comeco2.png)
+![pergunta](./assets/pergunta.png)
+![chute](./assets/chute.png)
+![final](./assets/final.png)
 
 
 ## Vídeo
@@ -67,13 +65,13 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Yuri Alves Bacarias | contribuição na formação da planilha de pokemons, contruibuição na exclusão dos pokemons e na logica do bancos de dados dos pokemons |  regular | 
 
 ## Outros 
-Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
-(i) Lições Aprendidas;
-(ii) Percepções;
-(iii) Contribuições e Fragilidades, e
-(iV) Trabalhos Futuros.
+Para trabalhos futuros, podemos expandir o mundo do Pokinator, adicionando mais Pokemons de diferentes bases e mais perguntas, para que o Pokinator possa adivinhar mais Pokemons. Além disso, podemos adicionar mais funcionalidades, como a possibilidade de adicionar novos Pokemons e novas perguntas, para que o Pokinator possa ser mais personalizado.
 
 ## Fontes
 > https://docs.docker.com/engine/install/ubuntu/
+
 > https://pt.akinator.com/
+
+> https://github.com/shinya/pokemon-terminal-art/
+
 
