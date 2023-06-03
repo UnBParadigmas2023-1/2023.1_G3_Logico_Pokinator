@@ -48,6 +48,6 @@ filter([H|T], Lista, ListaFiltrada) :-
 
 remove([]).
 remove([Head | Tail]) :-
-    retract(pokemon(Head, _, _, _, _, _)),
+    retract(pokemon(Head, _, _, _, _, _, _)),
     remove(Tail).
 

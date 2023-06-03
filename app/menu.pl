@@ -4,7 +4,7 @@
     print_main_menu/0,
     print_instructions/0,
     print_invalid_command/0,
-    print_pokemon_guessed/1
+    print_guessed/1
 ]).
 
 print_header :-
@@ -48,4 +48,23 @@ print_invalid_command :-
     write("Atenção: A opção digitada não foi reconhecida como um comando válido!"), nl,
     write("Por favor, digite novamente."), nl,
     sleep(3).
+
+
+print_guessed(Name) :-
+    shell('clear'),
+    print_header,
+    nl,
+    write("    .----------------.   .----------------.   .----------------.  "), nl,
+    write("   | .--------------. | | .--------------. | | .--------------. | "), nl,
+    write("   | |    ______    | | | |    ______    | | | |    ______    | | "), nl,
+    write("   | |   / _ __ `.  | | | |   / _ __ `.  | | | |   / _ __ `.  | | "), nl,
+    write("   | |  |_/____) |  | | | |  |_/____) |  | | | |  |_/____) |  | | "), nl,
+    write("   | |    /  ___.'  | | | |    /  ___.'  | | | |    /  ___.'  | | "), nl,
+    write("   | |    |_|       | | | |    |_|       | | | |    |_|       | | "), nl,
+    write("   | |    (_)       | | | |    (_)       | | | |    (_)       | | "), nl,
+    write("   | |              | | | |              | | | |              | | "), nl,
+    write("   | '--------------' | | '--------------' | | '--------------' | "), nl,
+    write("    '----------------'   '----------------'   '----------------'  "), nl,
+    nl, 
+    write("   O seu pokémon é o "), write(Name), write(" ?"), nl, nl.
 

@@ -51,76 +51,45 @@ flow :-
 verify :-
    get_all(Res),
    length(Res, Len),
-   verify(Len).
+   verify(Len, Res).
 
-verify(0) :
-    write("Não consegui adivinhar, você venceu!"), 
-    nl,
+verify(0, _) :-
+    write("Não consegui adivinhar, você venceu!"), nl,
     halt.
 
-verify(1) :-
-    findall(T, pokemon(T, _, _, _, _, _), P),
-    P = [First|_],
-    write('⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⠾⠛⠋⠉⠉⠉⠉⢙⣿⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠀⢀⣼⠟⠁  ⠀⠀⠀⠀⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⢠⣿⠁????????⠙⢿⣿⣿⣿⡟⣷⡀⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⣾⢇⣤⣶⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠙⠛⠛⠁⢹⣇⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤?????????⢸⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀   ⢸⡏⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠘⣿⣿??????⣿⣿⡇⠀⠀⠀⠀⢠⡿⠁⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⢀⣴⠟⠁⠀⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠀⣠⣤⡙⠻⢿⣿⣿⣿⣿⣿⣋⣠⣤⡶⠟⢁⣤⡄⠀⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠀⢿⣿⣿⣷⣤⣈⣉⠉⠛⠛⠉⣉⣠⣤⣾⣿⣿⡟⠀⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⣾⣦⣀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⢋⣠⣴⣷⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⢿⣿⣿⣿⣷⣶⣤⣬⣭⣉⣉⣉⣩⣭⣥⣤⣶⣾⣿⣿⣿⡿⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀'), nl,
-    write("O seu pokémon é: "),
-    write(First), nl,
-    
-    halt.
+verify(1, [ First |_]) :-
+    print_guessed(First),
+    write('(x. sair) [s. ou n.] '),
+    read(Ans),
+    handle_guessed(Ans, First).    
 
-verify(2) :-
-    findall(T, pokemon(T, _, _, _, _, _), P),
-    P = [First|_],
-    nth1(2, P, SecondElement),
-    write('⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⠾⠛⠋⠉⠉⠉⠉⢙⣿⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠀⢀⣼⠟⠁  ⠀⠀⠀⠀⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⢠⣿⠁????????⠙⢿⣿⣿⣿⡟⣷⡀⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⣾⢇⣤⣶⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠙⠛⠛⠁⢹⣇⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤?????????⢸⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀   ⢸⡏⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠘⣿⣿??????⣿⣿⡇⠀⠀⠀⠀⢠⡿⠁⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⢀⣴⠟⠁⠀⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠀⣠⣤⡙⠻⢿⣿⣿⣿⣿⣿⣋⣠⣤⡶⠟⢁⣤⡄⠀⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠀⢿⣿⣿⣷⣤⣈⣉⠉⠛⠛⠉⣉⣠⣤⣾⣿⣿⡟⠀⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⣾⣦⣀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⢋⣠⣴⣷⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⢿⣿⣿⣿⣷⣶⣤⣬⣭⣉⣉⣉⣩⣭⣥⣤⣶⣾⣿⣿⣿⡿⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠀⠀⠀⠀⠀'), nl,
-    write('⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀'), nl,
-    write("O seu pokémon é: "),
-    write(First), nl,
-    write("Acertei? (s/n)"), nl,
-    read(Enter),
-    (Enter = 's' ->
-        write("Uhull!!"), nl
-    ; Enter = 'n' ->
-        write("Oh não, perdemos"), nl,
-        write("Deveria ter chutado: "),
-        write(SecondElement), nl
-    ),
-    halt.
+verify(2, BC) :-
+    random_member(P, BC),
+    print_guessed(P),
+    write('(x. sair) [s. ou n.] '),
+    read(Ans),
+    handle_guessed(Ans, P).
 
-
-verify(X) :-
+verify(_, _) :-
     flow.
-    
-   % TODO!
-   % verificar final -> uma função para verificar o que resta na base, pode ser feita nesse arquivo mesmo
-   %                 -> caso tenha nada, significa que não conseguiu adivinhar
-   %                 -> caso tenha 1,  é hora de chutar
-   %                 -> talvez seja preciso chutar mais de uma vez no caso das perguntas terem acabado (hitmonlee e hitmonchan)(magikarp e goldeen)
-   %                 -> sendo outro caso, volta pro começo do flow
+
+handle_guessed(s, Guessed) :-
+    findall(T, pokemon(Guessed, _, _, _, _, _, T), Num),
+    concat_strings('curl -s "https://raw.githubusercontent.com/shinya/pokemon-terminal-art/main/256color/diamond/', Num, TempLink),
+    concat_strings(TempLink, ['.txt"'], Link),
+    shell('clear'), nl,
+    shell(Link), nl, nl,     
+    write("Obrigado por jogar! Até a Próxima"), nl,
+    halt.
+
+handle_guessed(n, Guessed) :-
+    retract(pokemon(Guessed, _, _, _, _, _, _)),
+    verify.
+
+handle_guessed(_, _) :-
+    print_invalid_command,
+    verify.
+
+concat_strings(String1, [String2], Concatenated) :-
+    concat_atom([String1, String2], Concatenated).
 

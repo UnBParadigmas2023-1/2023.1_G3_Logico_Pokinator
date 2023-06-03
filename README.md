@@ -56,7 +56,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | -- | -- | -- |
 | Antonio Igor Carvalho | Criação do módulo de mensagens utilizadas pelo menu, pequena contribuição na planilha de pokemons e suas informações, pequena contribuição na parte de analisar se restam pokemons na base de conhecimento | Regular | 
 | Antonio Rangel Chaves | Ajuda na verificação dos pokemons restantes na base de conhecimento depois da respostas das perguntas | Ruim | 
-| Daniel Porto de Souza | - | - | 
+| Daniel Porto de Souza | Caldulo de melhro pergunta, logica de atualização da base, fluxo da aplicação, ajustes gerais e integração | Excelente | 
 | João Gabriel de Campos de Matos | Criação do modulo bc_atualizações, utilizado para atualizar a lista de pokemons com base nas respostas do usuário. | Boa | 
 | Kess Jhones Gomes Tavares | Tratamento dos inputs e auxilio no fluxo de resposta final para o úsuario | Regular | 
 | Mateus Moreira Lima | Participei na parte de verificação e chute de pokémons da base, quando pokémons com os mesmos parâmetros não era possível chegar a uma única conclusão. | Regular |
