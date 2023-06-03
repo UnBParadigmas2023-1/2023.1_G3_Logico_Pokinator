@@ -30,7 +30,7 @@ get_better_question(Question) :-
     %write(Question), nl, nl.  
 
 get_paramms_set(T, A, B, C, D, E, Res) :-
-    setof(T, A^B^C^D^E^N^pokemon(N, A, B, C, D, E), Res).
+    setof(T, A^B^C^D^E^N^M^pokemon(N, A, B, C, D, E, M), Res).
 
 max_relative_amount([], N, [_, _, 0]).
 
@@ -93,7 +93,7 @@ write_question(1, evo3) :-
     write(" Seu Pokémon tem 3 evoluções? ").
 
 write_question(1, evo2) :-
-    write(" Seu Pokémon tem 2 evoluções? ").
+    write(" Seu Pokémon tem 2 evoluções apenas? ").
 
 write_question(1, evo1) :-
     write(" Seu Pokémon tem 1 evolução apenas? ").

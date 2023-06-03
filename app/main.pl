@@ -74,13 +74,22 @@ verify(_, _) :-
     flow.
 
 handle_guessed(s, Guessed) :-
-    write("Acertei"), nl,
+    findall(T, pokemon(Guessed, _, _, _, _, _, T), Num),
+    concat_strings('curl -s "https://raw.githubusercontent.com/shinya/pokemon-terminal-art/main/256color/diamond/', Num, TempLink),
+    concat_strings(TempLink, ['.txt"'], Link),
+    shell('clear'), nl,
+    shell(Link), nl, nl,     
+    write("Obrigado por jogar! Até a Próxima"), nl,
     halt.
 
 handle_guessed(n, Guessed) :-
-    retract(pokemon(Guessed, _, _, _, _, _)),
+    retract(pokemon(Guessed, _, _, _, _, _, _)),
     verify.
 
 handle_guessed(_, _) :-
     print_invalid_command,
     verify.
+
+concat_strings(String1, [String2], Concatenated) :-
+    concat_atom([String1, String2], Concatenated).
+
