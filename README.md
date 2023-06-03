@@ -39,6 +39,13 @@ Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcioname
 - Execute ```make run```
 - Uma vez que o projeto esteja funcionando, responda as perguntas usando o teclado e a linha de comando
 
+## Screenshots
+![inicio](./assets/Screenshot 2023-06-02 at 21.08.28.png)
+![meio](./assets/Screenshot 2023-06-02 at 21.08.40.png)
+![pergunta](./assets/Screenshot 2023-06-02 at 21.08.58.png)
+![chute](.assets/Screenshot 2023-06-02 at 21.23.09.png)
+![fim](.assets/Screenshot 2023-06-02 at 21.23.22.png)
+
 
 ## Vídeo
 Adicione 1 ou mais vídeos com a execução do projeto.
