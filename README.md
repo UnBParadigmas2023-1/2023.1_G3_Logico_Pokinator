@@ -40,22 +40,17 @@ Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcioname
 - Uma vez que o projeto esteja funcionando, responda as perguntas usando o teclado e a linha de comando
 
 ## Screenshots
-![inicio](./assets/Screenshot 2023-06-02 at 21.08.28.png)
-![meio](./assets/Screenshot 2023-06-02 at 21.08.40.png)
-![pergunta](./assets/Screenshot 2023-06-02 at 21.08.58.png)
-![chute](.assets/Screenshot 2023-06-02 at 21.23.09.png)
-![fim](.assets/Screenshot 2023-06-02 at 21.23.22.png)
+
+![Screenshot 2023-06-02 at 21.08.28](./assets/Screenshot 2023-06-02 at 21.08.28.png)
+![Screenshot 2023-06-02 at 21.08.40](./assets/Screenshot 2023-06-02 at 21.08.40.png)
+![Screenshot 2023-06-02 at 21.08.58](./assets/Screenshot 2023-06-02 at 21.08.58.png)
+![Screenshot 2023-06-02 at 21.23.09](./assets/Screenshot 2023-06-02 at 21.23.09.png)
+![Screenshot 2023-06-02 at 21.23.22](./assets/Screenshot 2023-06-02 at 21.23.22.png)
 
 
 ## Vídeo
-Adicione 1 ou mais vídeos com a execução do projeto.
-Procure: 
-(i) Introduzir o projeto;
-(ii) Mostrar passo a passo o código, explicando-o, e deixando claro o que é de terceiros, e o que é contribuição real da equipe;
-(iii) Apresentar particularidades do Paradigma, da Linguagem, e das Tecnologias, e
-(iV) Apresentar lições aprendidas, contribuições, pendências, e ideias para trabalhos futuros.
-OBS: TODOS DEVEM PARTICIPAR, CONFERINDO PONTOS DE VISTA.
-TEMPO: +/- 15min
+
+Link de apresentação: https://www.youtube.com/watch?v=GO7ynYJS1d0
 
 ## Participações
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
